@@ -14,8 +14,8 @@
 <body>
     <?php include __DIR__ . '/partials/header.php' ?>
     <main>
-        <div class="container pb-4">
-            <div class="row row-cols-6 gap-3">
+        <div class="container">
+            <div class="row row-cols-6 justify-content-center">
                 <?php include __DIR__ . '/partials/cards.php' ?>
             </div>
         </div>
