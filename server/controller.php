@@ -12,5 +12,17 @@ if (isset($_GET['query'])) {
                 'response' => $cards
             ]
         );
+    } else {
+        foreach ($cards as $card) {
+            if ($query == $card['genre']) {
+                $filteredCards[] = $card;
+            }
+        }
+        echo json_encode(
+            [
+                'length' => count($filteredCards),
+                'response' => $filteredCards
+            ]
+        );
     };
 }

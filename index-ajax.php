@@ -17,6 +17,17 @@
     <?php include __DIR__ . '/partials/header.php' ?>
     <main id="app">
         <div class="container">
+            <div class="row justify-content-end">
+                <div class="col-2 text-end text-white">
+                    <p>Filtra per genere: </p>
+                </div>
+                <div class="col-2">
+                    <select name="genre" id="genreSelect" v-model="query" @change="getCards">
+                        <option value="all">All</option>
+                        <option v-for="genre in genres" :value="genre">{{ genre }}</option>
+                    </select>
+                </div>
+            </div>
             <div class="row row-cols-6 justify-content-center">
                 <div class="col p-1 mt-3 mx-2 text-center" v-for="card in cards">
                     <img class="img-fluid mb-1 p-3" :src="card.poster" :alt="card.title" />
